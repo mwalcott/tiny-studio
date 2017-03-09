@@ -1,0 +1,20 @@
+# Documentation: https://roots.io/trellis/docs/local-development-setup/
+# `wordpress_sites` options: https://roots.io/trellis/docs/wordpress-sites
+# Define accompanying passwords/secrets in group_vars/development/vault.yml
+
+wordpress_sites:
+  tinystudiocollective.com:
+    site_hosts:
+      - canonical: tinystudiocollective.dev
+        redirects:
+          - www.tinystudiocollective.dev
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_email: m.walcott33@gmail.com
+    admin_user: mike.walcott
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: self-signed
+    cache:
+      enabled: false
